@@ -59,4 +59,8 @@ public class FiksniBroj extends TelefonskiBroj {
     public int hashCode() {
         return 0;
     }
+    public enum Grad {
+        TRAVNIK, ORASJE, ZENICA, SARAJEVO, LIVNO, TUZLA, MOSTAR, BIHAC, GORAZDE, SIROKIBRIJEG, BRCKO
+    }
+
 }
