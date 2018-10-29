@@ -24,32 +24,32 @@ public class FiksniBroj extends TelefonskiBroj {
         setGrad(grad);
         setBroj(broj);
     }
-    
+
     @Override
     public String ispisi(){
         switch (grad){
             case TRAVNIK:
-                return "030" + broj;
+                return "030/" + broj;
             case ORASJE:
-                return "031" + broj;
+                return "031/" + broj;
             case ZENICA:
-                return "032" + broj;
+                return "032/" + broj;
             case SARAJEVO:
-                return "033" + broj;
+                return "033/" + broj;
             case LIVNO:
-                return "034" + broj;
+                return "034/" + broj;
             case TUZLA:
-                return "035" + broj;
+                return "035/" + broj;
             case MOSTAR:
-                return "036" + broj;
+                return "036/" + broj;
             case BIHAC:
-                return "037" + broj;
+                return "037/" + broj;
             case GORAZDE:
-                return "038" + broj;
+                return "038/" + broj;
             case SIROKIBRIJEG:
-                return "039" + broj;
+                return "039/" + broj;
             case BRCKO:
-                return "049" + broj;
+                return "049/" + broj;
             default:
                 return null;
         }
