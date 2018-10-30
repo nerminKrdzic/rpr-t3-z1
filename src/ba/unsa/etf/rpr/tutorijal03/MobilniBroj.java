@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-public class MobilniBroj extends TelefonskiBroj{
+public class MobilniBroj extends TelefonskiBroj implements Comparable{
     private int mobilnaMreza = 0;
     private String broj;
 
@@ -34,4 +34,11 @@ public class MobilniBroj extends TelefonskiBroj{
     public int hashCode() {
         return 0;
     }
+
+    @Override
+    public int compareTo(Object o) {
+        TelefonskiBroj o2 = (MobilniBroj) o;
+        return ispisi().compareTo(o2.ispisi());
+    }
+
 }

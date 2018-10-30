@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-public class FiksniBroj extends TelefonskiBroj {
+public class FiksniBroj extends TelefonskiBroj implements Comparable {
     private Grad grad = null;
     private String broj = null;
 
@@ -59,6 +59,13 @@ public class FiksniBroj extends TelefonskiBroj {
     public int hashCode() {
         return 0;
     }
+
+    @Override
+    public int compareTo(Object o) {
+        TelefonskiBroj o2 = (FiksniBroj) o;
+        return ispisi().compareTo(o2.ispisi());
+    }
+
     public enum Grad {
         TRAVNIK, ORASJE, ZENICA, SARAJEVO, LIVNO, TUZLA, MOSTAR, BIHAC, GORAZDE, SIROKIBRIJEG, BRCKO
     }

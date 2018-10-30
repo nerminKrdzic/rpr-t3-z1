@@ -1,9 +1,6 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class Imenik {
     private Map<String, TelefonskiBroj> hashPoImenu = new HashMap<>();
@@ -13,16 +10,19 @@ public class Imenik {
         hashPoImenu.put(ime, broj);
         hashPoTelefonskomBroju.put(broj, ime);
     }
+
     public String dajBroj(String ime) {
         if(hashPoImenu.containsKey(ime))
             return hashPoImenu.get(ime).ispisi();
         return null;
     }
+
     public String dajIme(TelefonskiBroj broj){
         if(hashPoTelefonskomBroju.containsKey(broj))
             return hashPoTelefonskomBroju.get(broj);
         return null;
     }
+
     public String naSlovo(char s){
         String slovo = Character.toString(s);
         String result = "";
@@ -34,6 +34,28 @@ public class Imenik {
                 result += Integer.toBinaryString(i) + ". " + pair.getKey() + " - " + pair.getValue().ispisi() + "\n";
                 i++;
             }
+        }
+        return result;
+    }
+
+    public Set<String> izGrada(FiksniBroj.Grad g){
+        Set<String> result = new TreeSet<>();
+        Iterator<Map.Entry<String, TelefonskiBroj>> it = hashPoImenu.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<String, TelefonskiBroj> pair = (Map.Entry<String, TelefonskiBroj>) it.next();
+            if(pair.getValue() instanceof FiksniBroj && ((FiksniBroj) pair.getValue()).getGrad().equals(g))
+                result.add(pair.getKey());
+        }
+        return result;
+    }
+
+    public Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g){
+        Set<TelefonskiBroj> result = new TreeSet<>();
+        Iterator<Map.Entry<String, TelefonskiBroj>> it = hashPoImenu.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<String, TelefonskiBroj> pair = (Map.Entry<String, TelefonskiBroj>) it.next();
+            if(pair.getValue() instanceof FiksniBroj && ((FiksniBroj) pair.getValue()).getGrad().equals(g))
+                result.add(pair.getValue());
         }
         return result;
     }
