@@ -4,11 +4,9 @@ import java.util.*;
 
 public class Imenik {
     private Map<String, TelefonskiBroj> hashPoImenu = new HashMap<>();
-    private Map<TelefonskiBroj, String> hashPoTelefonskomBroju = new HashMap<>();
 
     public void dodaj(String ime, TelefonskiBroj broj){
         hashPoImenu.put(ime, broj);
-        hashPoTelefonskomBroju.put(broj, ime);
     }
 
     public String dajBroj(String ime) {
@@ -17,9 +15,10 @@ public class Imenik {
         return null;
     }
 
-    public String dajIme(TelefonskiBroj broj){
-        if(hashPoTelefonskomBroju.containsKey(broj))
-            return hashPoTelefonskomBroju.get(broj);
+    public String dajIme(TelefonskiBroj broj) {
+        for (Map.Entry<String, TelefonskiBroj> pair : hashPoImenu.entrySet())
+            if (pair.getValue().getClass() == broj.getClass() && pair.getValue().equals(broj))
+                return pair.getKey();
         return null;
     }
 
