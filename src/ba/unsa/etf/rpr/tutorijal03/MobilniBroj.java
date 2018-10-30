@@ -32,7 +32,7 @@ public class MobilniBroj extends TelefonskiBroj implements Comparable{
 
     @Override
     public int hashCode() {
-        return 0;
+        return ((Integer)getMobilnaMreza()).hashCode();
     }
 
     @Override

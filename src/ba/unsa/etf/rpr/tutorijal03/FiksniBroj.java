@@ -57,7 +57,7 @@ public class FiksniBroj extends TelefonskiBroj implements Comparable {
 
     @Override
     public int hashCode() {
-        return 0;
+        return getGrad().hashCode();
     }
 
     @Override

@@ -32,7 +32,7 @@ public class MedunarodniBroj extends TelefonskiBroj implements Comparable {
 
     @Override
     public int hashCode() {
-        return 0;
+        return getDrzava().hashCode();
     }
 
     @Override
