@@ -70,4 +70,11 @@ public class FiksniBroj extends TelefonskiBroj implements Comparable {
         TRAVNIK, ORASJE, ZENICA, SARAJEVO, LIVNO, TUZLA, MOSTAR, BIHAC, GORAZDE, SIROKIBRIJEG, BRCKO
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof FiksniBroj){
+            return ispisi().equals(((FiksniBroj) o).ispisi());
+        }
+        return false;
+    }
 }

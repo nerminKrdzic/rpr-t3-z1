@@ -41,4 +41,11 @@ public class MedunarodniBroj extends TelefonskiBroj implements Comparable {
         return ispisi().compareTo(o2.ispisi());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof MedunarodniBroj){
+            return ispisi().equals(((MedunarodniBroj) o).ispisi());
+        }
+        return false;
+    }
 }

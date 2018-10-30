@@ -40,5 +40,12 @@ public class MobilniBroj extends TelefonskiBroj implements Comparable{
         TelefonskiBroj o2 = (MobilniBroj) o;
         return ispisi().compareTo(o2.ispisi());
     }
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof MobilniBroj){
+            return ispisi().equals(((MobilniBroj) o).ispisi());
+        }
+        return false;
+    }
 
 }
